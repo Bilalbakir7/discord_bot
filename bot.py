@@ -1,5 +1,7 @@
 import discord
-import responses
+import responses 
+from discord.ext import commands
+from discord import app_commands
 
 
 # Send messages
@@ -13,8 +15,11 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot():
-    TOKEN = 'YOUR_KEY'
-    client = discord.Client()
+    TOKEN = 'MTEzNjI2MTY5MzE2MTM1NzM4NA.GzftUd.puBDjFZJ09f91L3KvGHFBeyyS3M15GkdqZCazo'
+    intents = discord.Intents.default()
+    intents.message_content = True
+    client = discord.Client(intents=intents)
+
 
     @client.event
     async def on_ready():
